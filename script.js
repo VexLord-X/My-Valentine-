@@ -12,6 +12,7 @@ const messages = [
 ];
 
 let messageIndex = 0;
+let noClickCount = 0;
 
 function handleNoClick() {
     const noButton = document.querySelector('.no-button');
@@ -22,6 +23,13 @@ function handleNoClick() {
     yesButton.style.fontSize = `${currentSize * 1.5}px`;
     const gifContainer = document.querySelector(".gif_container img");
     gifContainer.src = "https://media4.giphy.com/media/QlQdLBS70XJcZY1fLF/giphy.gif?cid=6c09b952smk1by1n4r2g2xy59qhsho56ts61899zyxkvk1ei&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s";
+    
+    noClickCount++;
+    // Jika sudah diklik 6 kali, sembunyikan tombol NO
+    if (noClickCount >= 10) {
+        noButton.style.display = "none";
+}
+    
 }
 
 function handleYesClick() {
